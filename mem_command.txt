@@ -1,0 +1,5 @@
+cat /proc/meminfo
+cat /proc/slabinfo
+cat /proc/interrupts
+cat sys/kernel/debug/mma/meminfo
+cat /proc/slabinfo

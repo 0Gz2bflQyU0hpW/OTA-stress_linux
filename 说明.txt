@@ -1,0 +1,21 @@
+########2020-11-29
+linux下运行此脚本，linux下需要安装minicom并配置测试机连接的串口
+
+1.安装minicom
+  终端输入sudo apt-get install minicom
+
+2.进入minicom参数配置界面
+   sudo minicom -s
+   键盘输入a或者A，选择串口设备，一般我们使用的是USB转串口，并且我的开发板连接到了COM1上，将/dev/tty8修改为/dev/ttyUSB0  
+   
+    配置完串口设备后，按Enter键，再输入E，配置波特率，按默认配置即可? 115200 8N1 （波特率：115200，数据位：8，奇偶校验位：N 无，停止位：1）
+ 
+    配置完波特率，按Enter键，再输入F，配置硬件流控，选择NO
+
+   再继续配置软件流控，也选择NO。都配置完后，按下Enter键返回上一界面，选择save setup as dfl（即将其保存位默认配置）/save setup as ..(保存自定义配置)，再选择Exit，关闭minicom。
+
+3.打开配置的串口
+  chmod 666 /dev/ttyUSB*
+  minicom /dev/ttyUSB*
+   
+
